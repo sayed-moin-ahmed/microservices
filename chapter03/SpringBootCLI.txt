@@ -1,0 +1,12 @@
+sudo wget https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.5.4/spring-boot-cli-2.5.4-bin.tar.gz
+sudo tar -xvf spring-boot-cli-2.5.4-bin.tar.gz 
+cd spring-2.5.4/
+sudo ln -s ./shell-completion/bash/spring /etc/bash_completion.d/spring
+sudo ln -s ./shell-completion/zsh/_spring /usr/local/share/zsh/site-functions/_spring
+
+
+sudo vim /etc/profile
+export SPRING_HOME=//home/sayed/spring-2.5.4/
+export PATH=$SPRING_HOME/bin:$PATH
+source /etc/profile
+
