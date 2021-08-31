@@ -51,4 +51,28 @@ spring init \
 --version=1.0.0-SNAPSHOT \
 product-composite-service
 
+spring init \
+--boot-version=2.5.3 \
+--build=gradle \
+--java-version=1.8 \
+--packaging=jar \
+--name=api \
+--package-name=se.magnus.api \
+--groupId=se.magnus.api \
+--dependencies=actuator,webflux \
+--version=1.0.0-SNAPSHOT \
+api
+
+spring init \
+--boot-version=2.5.3 \
+--build=gradle \
+--java-version=1.8 \
+--packaging=jar \
+--name=util \
+--package-name=se.magnus.util \
+--groupId=se.magnus.api \
+--dependencies=actuator,webflux \
+--version=1.0.0-SNAPSHOT \
+util
+
 cd ..
