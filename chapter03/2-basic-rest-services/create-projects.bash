@@ -51,6 +51,8 @@ spring init \
 --version=1.0.0-SNAPSHOT \
 product-composite-service
 
+cd ..
+
 spring init \
 --boot-version=2.5.3 \
 --build=gradle \
@@ -70,9 +72,8 @@ spring init \
 --packaging=jar \
 --name=util \
 --package-name=se.magnus.util \
---groupId=se.magnus.api \
+--groupId=se.magnus.util \
 --dependencies=actuator,webflux \
 --version=1.0.0-SNAPSHOT \
 util
 
-cd ..

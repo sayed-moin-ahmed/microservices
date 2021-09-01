@@ -4,12 +4,9 @@ plugins {
 	id 'java'
 }
 
-apply plugin: 'java'
-
-
-group = 'se.magnus.microservices.api'
+group = 'se.magnus.api'
 version = '1.0.0-SNAPSHOT'
-sourceCompatibility = 1.8
+sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
