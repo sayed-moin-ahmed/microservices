@@ -1,1 +1,3 @@
 rootProject.name = 'recommendation-service'
+include ':api'
+include ':util'
