@@ -4,6 +4,11 @@ plugins {
 	id 'java'
 }
 
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
 group = 'se.magnus.microservices.core.product'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '1.8'
