@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3bfe3131-d04a-400d-a030-e08cf07d717d" name="Changes" comment="changes">
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/creategradlebuild.bash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/product-composite-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/product-composite-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/product-composite-service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/product-composite-service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/product-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/product-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/product-service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/product-service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/recommendation-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/recommendation-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/recommendation-service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/recommendation-service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/review-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/review-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/review-service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/microservices/review-service/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/microservies.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter03/1-spring-init/microservices/product-composite-service/src/main/java/se/magnus/microservices/composite/product/ProductCompositeServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter03/1-spring-init/microservices/product-composite-service/src/main/java/se/magnus/microservices/composite/product/ProductCompositeServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/src/main/java/se/magnus/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/src/main/java/se/magnus/api/ApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/src/main/java/se/magnus/api/core/product/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter03/2-basic-rest-services/create-projects.bash" beforeDir="false" afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/create-projects.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter03/2-basic-rest-services/gradlebuild.bash" beforeDir="false" afterPath="$PROJECT_DIR$/chapter03/2-basic-rest-services/gradlebuild.bash" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/build.gradle">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/chapter03/2-basic-rest-services/settings.gradle">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/chapter03/1-spring-init" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1xP1C9hiofXyAggPWweXH5SXwYN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/se.magnus.microservices.core.product" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/src/main/java/se/magnus" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/src/main/java/se/magnus/api" />
+      <recent name="$PROJECT_DIR$/chapter03/2-basic-rest-services/api/src/main/java/se/magnus" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle --continue" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle./media/sayed/Seagate Portable Drive/Data/GitHub/microservies/chapter03/1-spring-init/microservices/product-service/build.gradle">
+    <configuration name="/media/sayed/Seagate Portable Drive/Data/GitHub/microservies/chapter03/1-spring-init/microservices/product-service/build.gradle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chapter03/1-spring-init/microservices/product-service/build.gradle" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="/media/sayed/Seagate Portable Drive/Data/GitHub/microservies/chapter03/2-basic-rest-services/settings.gradle (3)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chapter03/2-basic-rest-services/settings.gradle" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="/media/sayed/Seagate Portable Drive/Data/GitHub/microservies/chapter03/2-basic-rest-services/settings.gradle (4)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chapter03/2-basic-rest-services/settings.gradle" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="gradlebuild.bash" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/chapter03/2-basic-rest-services/gradlebuild.bash" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/chapter03/2-basic-rest-services" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="gradlew" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/chapter03/2-basic-rest-services/gradlew" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/chapter03/2-basic-rest-services" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle./media/sayed/Seagate Portable Drive/Data/GitHub/microservies/chapter03/1-spring-init/microservices/product-service/build.gradle" />
+        <item itemvalue="Shell Script.gradlew" />
+        <item itemvalue="Shell Script.gradlebuild.bash" />
+        <item itemvalue="Gradle./media/sayed/Seagate Portable Drive/Data/GitHub/microservies/chapter03/2-basic-rest-services/settings.gradle (4)" />
+        <item itemvalue="Gradle./media/sayed/Seagate Portable Drive/Data/GitHub/microservies/chapter03/2-basic-rest-services/settings.gradle (3)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bfe3131-d04a-400d-a030-e08cf07d717d" name="Changes" comment="" />
+      <created>1630241780484</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630241780484</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Refactor">
+      <created>1630241838879</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630241838879</updated>
+    </task>
+    <task id="LOCAL-00002" summary="springbootcli setup">
+      <created>1630314843592</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630314843592</updated>
+    </task>
+    <task id="LOCAL-00003" summary="project">
+      <created>1630316974619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1630316974619</updated>
+    </task>
+    <task id="LOCAL-00004" summary="project">
+      <created>1630317163592</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630317163592</updated>
+    </task>
+    <task id="LOCAL-00005" summary="gradlebuild">
+      <created>1630323943718</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1630323943718</updated>
+    </task>
+    <task id="LOCAL-00006" summary="changes">
+      <created>1630428001135</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1630428001135</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Refactor" />
+    <MESSAGE value="springbootcli setup" />
+    <MESSAGE value="project" />
+    <MESSAGE value="gradlebuild" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/microservies$_media_sayed_Seagate_Portable_Drive_Data_GitHub_microservies_chapter03_2_basic_rest_services_settings_gradle__1_.ic" NAME="$PROJECT_DIR$/chapter03/2-basic-rest-services/settings.gradle (1) Coverage Results" MODIFIED="1630429298011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
