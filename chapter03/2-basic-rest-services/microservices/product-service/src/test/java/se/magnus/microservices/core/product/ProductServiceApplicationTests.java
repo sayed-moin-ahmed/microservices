@@ -1,3 +1,4 @@
+/*
 package se.magnus.microservices.core.product;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +12,4 @@ class ProductServiceApplicationTests {
 	}
 
 }
+*/
