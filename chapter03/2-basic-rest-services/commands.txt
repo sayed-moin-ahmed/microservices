@@ -18,5 +18,14 @@ curl http://localhost:7001/product/123
 
 
 
+java -jar microservices/product-service/build/libs/*.jar &
+java -jar microservices/recommendation-service/build/libs/*.jar &
+java -jar microservices/review-service/build/libs/*.jar &
+
+
+
+
+
+
 
 
