@@ -22,6 +22,15 @@ java -jar microservices/review-service/build/libs/*.jar &
 sudo lsof -t -i:7001
 sudo kill -9 $(sudo lsof -t -i:7001)
 
+---install docker on Ubuntu---
+sudo snap install docker
+
+---docker commands---
+docker run -it --rm ubuntu
+cat /etc/os-release | grep 'VERSION='
+docker rm -f $(docker ps -aq)
+
+
 
 
 
