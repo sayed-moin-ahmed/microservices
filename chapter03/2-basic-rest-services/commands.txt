@@ -27,6 +27,7 @@ sudo snap install docker
 https://appuals.com/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock/
 https://www.tecmint.com/install-docker-and-run-docker-containers-in-ubuntu/
 https://stackoverflow.com/questions/47854463/docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socke
+https://stackoverflow.com/questions/44678725/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker
 sudo systemctl unmask docker.service
 sudo systemctl unmask docker.socket
 sudo systemctl start docker.service
@@ -34,6 +35,7 @@ sudo chmod 777 /var/run/docker.sock
 
 ---docker commands---
 sudo dockerd
+sudo chmod 777 /var/run/docker.sock
 docker run -it --rm ubuntu
 cat /etc/os-release | grep 'VERSION='
 docker rm -f $(docker ps -aq)
