@@ -32,10 +32,9 @@ sudo systemctl unmask docker.service
 sudo systemctl unmask docker.socket
 sudo systemctl start docker.service
 sudo chmod 777 /var/run/docker.sock
+https://docs.docker.com/engine/security/rootless/ --(Follow these steps for intellij setup ***)
 
 ---docker commands---
-sudo dockerd
-sudo chmod 777 /var/run/docker.sock
 docker run -it --rm ubuntu
 cat /etc/os-release | grep 'VERSION='
 docker rm -f $(docker ps -aq)
