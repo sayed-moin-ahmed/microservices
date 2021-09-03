@@ -24,8 +24,16 @@ sudo kill -9 $(sudo lsof -t -i:7001)
 
 ---install docker on Ubuntu---
 sudo snap install docker
+https://appuals.com/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock/
+https://www.tecmint.com/install-docker-and-run-docker-containers-in-ubuntu/
+https://stackoverflow.com/questions/47854463/docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socke
+sudo systemctl unmask docker.service
+sudo systemctl unmask docker.socket
+sudo systemctl start docker.service
+sudo chmod 777 /var/run/docker.sock
 
 ---docker commands---
+sudo dockerd
 docker run -it --rm ubuntu
 cat /etc/os-release | grep 'VERSION='
 docker rm -f $(docker ps -aq)
