@@ -1,7 +1,6 @@
 FROM openjdk:12.0.2
-
+RUN mkdir /app
 EXPOSE 8080
-
-ADD ./build/libs/*.jar app.jar/
-
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY ./build/libs/recommendation-service-1.0.0-SNAPSHOT.jar /app/java-application.jar
+WORKDIR /app
+CMD "java" "-jar" "java-application.jar"
