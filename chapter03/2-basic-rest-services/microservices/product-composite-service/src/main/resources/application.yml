@@ -18,6 +18,7 @@ logging:
     se.magnus: DEBUG
 
 ---
+spring.config.activate.on-profile: docker
 spring.profiles: docker
 
 server.port: 8080

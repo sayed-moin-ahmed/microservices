@@ -23,7 +23,9 @@ sudo lsof -t -i:7001
 sudo kill -9 $(sudo lsof -t -i:7001)
 
 ---install docker on Ubuntu---
-sudo snap install docker
+https://docs.docker.com/engine/install/ubuntu/
+https://docs.docker.com/engine/install/linux-postinstall/
+https://docs.docker.com/compose/install/
 https://appuals.com/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock/
 https://www.tecmint.com/install-docker-and-run-docker-containers-in-ubuntu/
 https://stackoverflow.com/questions/47854463/docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socke
@@ -42,7 +44,7 @@ docker build -t product-service . (in product-service -t tag)
 docker images | grep product-service
 docker run --rm -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" product-service
 curl localhost:8080/product/3
-
+docker ps
 
 
 
