@@ -38,7 +38,10 @@ https://docs.docker.com/engine/security/rootless/ --(Follow these steps for inte
 docker run -it --rm ubuntu
 cat /etc/os-release | grep 'VERSION='
 docker rm -f $(docker ps -aq)
-
+docker build -t product-service . (in product-service -t tag)
+docker images | grep product-service
+docker run --rm -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" product-service
+curl localhost:8080/product/3
 
 
 
