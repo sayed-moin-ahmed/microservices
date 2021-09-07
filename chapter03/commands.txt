@@ -1,3 +1,4 @@
+https://github.com/orgs/PacktPublishing/repositories
 ==================Notes===============
 ---central gradle---
 cp -r microservices/product-service/gradle .
@@ -59,6 +60,6 @@ docker image prune -a --force --filter "until=2017-01-04T00:00:00"
 
 https://docs.docker.com/engine/reference/commandline/image_prune/
 
-
+./gradlew build && docker-compose build && docker-compose up -d
 
 
