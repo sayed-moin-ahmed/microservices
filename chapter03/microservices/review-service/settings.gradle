@@ -1,0 +1,3 @@
+rootProject.name = 'review-service'
+include ':api'
+include ':util'

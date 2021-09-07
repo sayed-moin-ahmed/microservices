@@ -1,0 +1,3 @@
+rootProject.name = 'product-composite-service'
+include ':api'
+include ':util'
