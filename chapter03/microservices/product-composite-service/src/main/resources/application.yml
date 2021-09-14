@@ -50,7 +50,8 @@ api:
         # Expected error responses
         1. If a product with the same productId as specified in the posted information already exists,
            an <b>422 - Unprocessable Entity</b> error with a "duplicate key" error message will be returned
-      delete-composite-product:
+
+    delete-composite-product:
         description: Deletes a product composite
         notes: |
           # Normal response
