@@ -6,12 +6,19 @@ services:
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      mongodb:
+        condition: service_healthy
+
 
   recommendation:
     build: microservices/recommendation-service
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      mongodb:
+        condition: service_healthy
 
   review:
     build: microservices/review-service
@@ -28,15 +35,20 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
 
   mongodb:
-    image: mongo:3.6.9
-    mem_limit: 350m
+    image: mongo:4.4.2
+    mem_limit: 512m
     ports:
       - "27017:27017"
-    command: mongod --smallfiles
+    command: mongod
+    healthcheck:
+      test: "mongo --eval 'db.stats().ok'"
+      interval: 5s
+      timeout: 2s
+      retries: 60
 
   mysql:
-      image: mysql:5.7
-      mem_limit: 350m
+      image: mysql:5.7.32
+      mem_limit: 512m
       ports:
         - "3306:3306"
       environment:
@@ -45,7 +57,7 @@ services:
         - MYSQL_USER=user
         - MYSQL_PASSWORD=pwd
       healthcheck:
-        test: [ "CMD", "mysqladmin" ,"ping", "-uuser", "-ppwd", "-h", "localhost" ]
-        interval: 10s
-        timeout: 5s
-        retries: 10
+        test: "/usr/bin/mysql --user=user --password=pwd --execute \"SHOW DATABASES;\""
+        interval: 5s
+        timeout: 2s
+        retries: 60
