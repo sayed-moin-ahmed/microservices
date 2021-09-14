@@ -13,6 +13,7 @@ cp microservices/product-service/.gitignore .
 --Single Remote Debugging --
 https://seagence.com/blog/java-remote-debugging-troubleshoot-techniques-challenges-and-approaches/
 java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 -jar microservices/recommendation-service/build/libs/*.jar &
+
 --Run Single Project---
 Run command
 cd $BOOK_HOME/Chapter03/2-basic-rest-services
@@ -21,7 +22,7 @@ java -jar microservices/product-service/build/libs/*.jar &
     curl http://localhost:7001/product/123
 java -jar microservices/recommendation-service/build/libs/*.jar &
 java -jar microservices/review-service/build/libs/*.jar &
-
+http://localhost:7002/recommendation/1
 
 
 ---kill port---
@@ -58,6 +59,10 @@ docker run --rm -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" product-service
 curl localhost:8080/product/3
 docker ps
 ./gradlew build docker-compose build
+docker exec -it 8ed10b9a17d3 bash
+mongodb://YOUR_USERNAME_HERE:YOUR_PASSWORD_HERE@0.0.0.0:YOUR_LOCALHOST_PORT_HERE/
+mongodb://0.0.0.0:27017
+
 
 
 docker images --format 'table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedAt}}\t{{.Size}}'
