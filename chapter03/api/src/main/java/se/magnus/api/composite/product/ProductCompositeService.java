@@ -35,5 +35,8 @@ public interface ProductCompositeService {
     @GetMapping(
             value    = "/product-composite/{productId}",
             produces = "application/json")
-    ProductAggregate getProduct(@PathVariable int productId);
+    ProductAggregate getCompositeProduct(int productId);
+    void createCompositeProduct(ProductAggregate body);
+    void deleteCompositeProduct(int productId);
+
 }

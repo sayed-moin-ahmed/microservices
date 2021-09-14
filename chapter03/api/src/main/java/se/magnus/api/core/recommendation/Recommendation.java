@@ -4,7 +4,7 @@ public class Recommendation {
     private final int productId;
     private final int recommendationId;
     private final String author;
-    private final int rate;
+    private int rate;
     private final String content;
     private String serviceAddress;
 
@@ -52,5 +52,9 @@ public class Recommendation {
 
     public void setServiceAddress(String serviceAddress) {
         this.serviceAddress = serviceAddress;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 }
