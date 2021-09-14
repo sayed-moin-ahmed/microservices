@@ -10,6 +10,9 @@ cp microservices/product-service/.gitignore .
 ./gradlew build
 ./gradlew build --scan
 
+--Single Remote Debugging --
+https://seagence.com/blog/java-remote-debugging-troubleshoot-techniques-challenges-and-approaches/
+java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 -jar microservices/recommendation-service/build/libs/*.jar &
 --Run Single Project---
 Run command
 cd $BOOK_HOME/Chapter03/2-basic-rest-services
@@ -18,6 +21,8 @@ java -jar microservices/product-service/build/libs/*.jar &
     curl http://localhost:7001/product/123
 java -jar microservices/recommendation-service/build/libs/*.jar &
 java -jar microservices/review-service/build/libs/*.jar &
+
+
 
 ---kill port---
 sudo lsof -t -i:7001
@@ -60,6 +65,11 @@ docker image prune -a --force --filter "until=2017-01-04T00:00:00"
 
 https://docs.docker.com/engine/reference/commandline/image_prune/
 
+
+http://localhost:8080/openapi/swagger-ui.html  --docker
+http://localhost:7000/openapi/swagger-ui.html  --local
+
 ./gradlew build && docker-compose build && docker-compose up -d
 
-
+exec mongodb mongo product-db --quiet --eval "db.products.find()"
+docker-compose exec mongodb mongo product-db --quiet --eval "db.products.find()"
