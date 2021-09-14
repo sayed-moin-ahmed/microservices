@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 ext {
-	mapstructVersion = "1.3.1"
+	mapstructVersion = "1.4.2.Final"
 }
 apply plugin: 'java'
 apply plugin: 'eclipse'

@@ -17,4 +17,6 @@ public interface RecommendationService {
             value    = "/recommendation",
             produces = "application/json")
     List<Recommendation> getRecommendations(@RequestParam(value = "productId", required = true) int productId);
+    Recommendation createRecommendation(Recommendation body);
+    void deleteRecommendations(int productId);
 }

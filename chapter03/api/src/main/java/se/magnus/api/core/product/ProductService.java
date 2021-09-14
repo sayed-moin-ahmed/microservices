@@ -9,4 +9,6 @@ public interface ProductService {
                     = "/product/{productId}",
             produces = "application/json")
     Product getProduct(@PathVariable int productId);
+    Product createProduct(Product body);
+    void deleteProduct(int productId);
 }
