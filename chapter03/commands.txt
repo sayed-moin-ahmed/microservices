@@ -58,6 +58,7 @@ docker images | grep product-service
 docker run --rm -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" product-service
 docker-compose exec mongodb mongo ––quiet
 docker-compose exec mysql mysql -uuser -p review-db
+docker-compose logs --follow
 
 curl localhost:8080/product/3
 docker ps
