@@ -18,7 +18,7 @@ public interface RecommendationService {
     @GetMapping(
             value    = "/recommendation",
             produces = "application/json")
-    List<Recommendation> getRecommendations(@RequestParam(value = "productId", required = true) int productId);
-    Flux<Recommendation> createRecommendation(Recommendation body);
+    Flux<Recommendation> getRecommendations(@RequestParam(value = "productId", required = true) int productId);
+    Recommendation createRecommendation(Recommendation body);
     void deleteRecommendations(int productId);
 }
