@@ -5,9 +5,10 @@ import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import static java.lang.String.format;
+
 @Document(collation = "products")
 public class ProductEntity {
-
     @Id
     private String id;
 
@@ -17,46 +18,60 @@ public class ProductEntity {
     @Indexed(unique = true)
     private int productId;
 
+    private String name;
+    private int weight;
 
     public ProductEntity() {
     }
 
-    public ProductEntity(String id, Integer version, int productId) {
-        this.id = id;
-        this.version = version;
+    public ProductEntity(int productId, String name, int weight) {
         this.productId = productId;
+        this.name = name;
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return format("ProductEntity: %s", productId);
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Integer getVersion() {
         return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
     }
 
     public int getProductId() {
         return productId;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     public void setProductId(int productId) {
         this.productId = productId;
     }
 
-    @Override
-    public String toString() {
-        return "ProductEntity{" +
-                "id='" + id + '\'' +
-                ", version=" + version +
-                ", productId=" + productId +
-                '}';
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 }

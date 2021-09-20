@@ -1,4 +1,4 @@
-package se.magnus.microservices.core.review.services;
+package se.magnus.microservices.core.recommendation.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
-import se.magnus.api.core.review.Review;
-import se.magnus.api.core.review.ReviewService;
+import se.magnus.api.core.recommendation.Recommendation;
+import se.magnus.api.core.recommendation.RecommendationService;
 import se.magnus.api.event.Event;
 import se.magnus.util.exceptions.EventProcessingException;
 
@@ -16,30 +16,30 @@ public class MessageProcessor {
 
     private static final Logger LOG = LoggerFactory.getLogger(MessageProcessor.class);
 
-    private final ReviewService reviewService;
+    private final RecommendationService recommendationService;
 
     @Autowired
-    public MessageProcessor(ReviewService reviewService) {
-        this.reviewService = reviewService;
+    public MessageProcessor(RecommendationService recommendationService) {
+        this.recommendationService = recommendationService;
     }
 
     @StreamListener(target = Sink.INPUT)
-    public void process(Event<Integer, Review> event) {
+    public void process(Event<Integer, Recommendation> event) {
 
         LOG.info("Process message created at {}...", event.getEventCreatedAt());
 
         switch (event.getEventType()) {
 
             case CREATE:
-                Review review = event.getData();
-                LOG.info("Create review with ID: {}/{}", review.getProductId(), review.getReviewId());
-                reviewService.createReview(review);
+                Recommendation recommendation = event.getData();
+                LOG.info("Create recommendation with ID: {}/{}", recommendation.getProductId(), recommendation.getRecommendationId());
+                recommendationService.createRecommendation(recommendation);
                 break;
 
             case DELETE:
                 int productId = event.getKey();
-                LOG.info("Delete reviews with ProductID: {}", productId);
-                reviewService.deleteReviews(productId);
+                LOG.info("Delete recommendations with ProductID: {}", productId);
+                recommendationService.deleteRecommendations(productId);
                 break;
 
             default:
