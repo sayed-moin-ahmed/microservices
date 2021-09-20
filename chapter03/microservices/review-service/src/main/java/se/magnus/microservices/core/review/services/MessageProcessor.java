@@ -16,12 +16,8 @@ public class MessageProcessor {
 
     private static final Logger LOG = LoggerFactory.getLogger(MessageProcessor.class);
 
-    private final ReviewService reviewService;
-
     @Autowired
-    public MessageProcessor(ReviewService reviewService) {
-        this.reviewService = reviewService;
-    }
+    private ReviewService reviewService;
 
     @StreamListener(target = Sink.INPUT)
     public void process(Event<Integer, Review> event) {

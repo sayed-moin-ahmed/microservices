@@ -1,10 +1,4 @@
 api:
-  responseCodes:
-    ok.description: OK
-    badRequest.description: Bad Request, invalid format of the request. See response message for more information
-    notFound.description: Not found, the specified id does not exist
-    unprocessableEntity.description: Unprocessable entity, input parameters caused the processing to fail. See response message for more information
-
   common:
     version: 1.0.0
     title: Sample API
@@ -17,6 +11,12 @@ api:
       name: Contact
       url: My
       email: me@mail.com
+
+  responseCodes:
+    ok.description: OK
+    badRequest.description: Bad Request, invalid format of the request. See response message for more information
+    notFound.description: Not found, the specified id does not exist
+    unprocessableEntity.description: Unprocessable entity, input parameters caused the processing to fail. See response message for more information
 
   product-composite:
 
@@ -74,6 +74,20 @@ app:
     host: localhost
     port: 7003
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+
+ribbon.ServerListRefreshInterval: 5000
+
+ribbon.NFLoadBalancerPingInterval: 5
+
 spring.cloud.stream:
   defaultBinder: rabbit
   default.contentType: application/json
@@ -110,7 +124,7 @@ management.endpoint.health.show-details: "ALWAYS"
 management.endpoints.web.exposure.include: "*"
 ---
 spring.config.activate.on-profile: docker
-
+eureka.client.serviceUrl.defaultZone: http://eureka:8761/eureka/
 server.port: 8080
 
 app:
