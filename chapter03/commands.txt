@@ -1,4 +1,6 @@
 https://github.com/orgs/PacktPublishing/repositories
+===============Gradle Scan Info===============
+https://scans.gradle.com/s/owmwo7dhyxwow
 ==================Notes===============
 ---central gradle---
 cp -r microservices/product-service/gradle .
