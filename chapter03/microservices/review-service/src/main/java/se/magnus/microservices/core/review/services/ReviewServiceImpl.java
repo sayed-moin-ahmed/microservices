@@ -14,6 +14,7 @@ import se.magnus.microservices.core.review.services.ReviewMapper;
 import se.magnus.util.exceptions.InvalidInputException;
 import se.magnus.util.http.ServiceUtil;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -24,7 +25,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     private static final Logger LOG = LoggerFactory.getLogger(ReviewServiceImpl.class);
 
-    private final ReviewRepository repository;
+    //private final ReviewRepository repository;
 
     private final ReviewMapper mapper;
 
@@ -33,9 +34,9 @@ public class ReviewServiceImpl implements ReviewService {
     private final Scheduler scheduler;
 
     @Autowired
-    public ReviewServiceImpl(Scheduler scheduler, ReviewRepository repository, ReviewMapper mapper, ServiceUtil serviceUtil) {
+    public ReviewServiceImpl(Scheduler scheduler, /*ReviewRepository repository,*/ ReviewMapper mapper, ServiceUtil serviceUtil) {
         this.scheduler = scheduler;
-        this.repository = repository;
+        //this.repository = repository;
         this.mapper = mapper;
         this.serviceUtil = serviceUtil;
     }
@@ -44,8 +45,9 @@ public class ReviewServiceImpl implements ReviewService {
     public Review createReview(Review body) {
 
         if (body.getProductId() < 1) throw new InvalidInputException("Invalid productId: " + body.getProductId());
-
-        try {
+        LOG.debug("createReview: created a review entity: {}/{}", body.getProductId(), body.getReviewId());
+        return  body;
+        /*try {
             ReviewEntity entity = mapper.apiToEntity(body);
             ReviewEntity newEntity = repository.save(entity);
 
@@ -54,7 +56,7 @@ public class ReviewServiceImpl implements ReviewService {
 
         } catch (DataIntegrityViolationException dive) {
             throw new InvalidInputException("Duplicate key, Product Id: " + body.getProductId() + ", Review Id:" + body.getReviewId());
-        }
+        }*/
     }
 
     @Override
@@ -69,7 +71,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     protected List<Review> getByProductId(int productId) {
 
-        List<ReviewEntity> entityList = repository.findByProductId(productId);
+        List<ReviewEntity> entityList = Arrays.asList(new ReviewEntity());
         List<Review> list = mapper.entityListToApiList(entityList);
         list.forEach(e -> e.setServiceAddress(serviceUtil.getServiceAddress()));
 
@@ -84,7 +86,7 @@ public class ReviewServiceImpl implements ReviewService {
         if (productId < 1) throw new InvalidInputException("Invalid productId: " + productId);
 
         LOG.debug("deleteReviews: tries to delete reviews for the product with productId: {}", productId);
-        repository.deleteAll(repository.findByProductId(productId));
+        //repository.deleteAll(repository.findByProductId(productId));
     }
 
     private <T> Flux<T> asyncFlux(Supplier<Publisher<T>> publisherSupplier) {

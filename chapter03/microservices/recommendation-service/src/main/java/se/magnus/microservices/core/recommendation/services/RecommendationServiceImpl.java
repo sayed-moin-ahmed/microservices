@@ -20,15 +20,15 @@ public class RecommendationServiceImpl implements RecommendationService {
 
     private static final Logger LOG = LoggerFactory.getLogger(RecommendationServiceImpl.class);
 
-    private final RecommendationRepository repository;
+    //private final RecommendationRepository repository;
 
     private final RecommendationMapper mapper;
 
     private final ServiceUtil serviceUtil;
 
     @Autowired
-    public RecommendationServiceImpl(RecommendationRepository repository, RecommendationMapper mapper, ServiceUtil serviceUtil) {
-        this.repository = repository;
+    public RecommendationServiceImpl(/*RecommendationRepository repository, */RecommendationMapper mapper, ServiceUtil serviceUtil) {
+        //this.repository = repository;
         this.mapper = mapper;
         this.serviceUtil = serviceUtil;
     }
@@ -39,14 +39,15 @@ public class RecommendationServiceImpl implements RecommendationService {
         if (body.getProductId() < 1) throw new InvalidInputException("Invalid productId: " + body.getProductId());
 
         RecommendationEntity entity = mapper.apiToEntity(body);
-        Mono<Recommendation> newEntity = repository.save(entity)
+        return  body;
+        /*Mono<Recommendation> newEntity = repository.save(entity)
                 .log()
                 .onErrorMap(
                         DuplicateKeyException.class,
                         ex -> new InvalidInputException("Duplicate key, Product Id: " + body.getProductId() + ", Recommendation Id:" + body.getRecommendationId()))
                 .map(e -> mapper.entityToApi(e));
 
-        return newEntity.block();
+        return newEntity.block();*/
     }
 
     @Override
@@ -54,7 +55,7 @@ public class RecommendationServiceImpl implements RecommendationService {
 
         if (productId < 1) throw new InvalidInputException("Invalid productId: " + productId);
 
-        return repository.findByProductId(productId)
+        return Flux.just(new RecommendationEntity())
                 .log()
                 .map(e -> mapper.entityToApi(e))
                 .map(e -> {e.setServiceAddress(serviceUtil.getServiceAddress()); return e;});
@@ -66,6 +67,6 @@ public class RecommendationServiceImpl implements RecommendationService {
         if (productId < 1) throw new InvalidInputException("Invalid productId: " + productId);
 
         LOG.debug("deleteRecommendations: tries to delete recommendations for the product with productId: {}", productId);
-        repository.deleteAll(repository.findByProductId(productId)).block();
+        //repository.deleteAll(repository.findByProductId(productId)).block();
     }
 }

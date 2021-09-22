@@ -11,7 +11,7 @@ import se.magnus.api.core.recommendation.RecommendationService;
 import se.magnus.api.event.Event;
 import se.magnus.util.exceptions.EventProcessingException;
 
-@EnableBinding(Sink.class)
+//@EnableBinding(Sink.class)
 public class MessageProcessor {
 
     private static final Logger LOG = LoggerFactory.getLogger(MessageProcessor.class);

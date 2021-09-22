@@ -36,7 +36,7 @@ public class ProductServiceApplication {
 	@Autowired
 	ReactiveMongoOperations mongoTemplate;
 
-	@EventListener(ContextRefreshedEvent.class)
+	//@EventListener(ContextRefreshedEvent.class)
 	public void initIndicesAfterStartup() {
 
 		MappingContext<? extends MongoPersistentEntity<?>, MongoPersistentProperty> mappingContext = mongoTemplate.getConverter().getMappingContext();

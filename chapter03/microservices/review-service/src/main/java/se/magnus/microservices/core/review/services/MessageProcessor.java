@@ -11,17 +11,13 @@ import se.magnus.api.core.review.ReviewService;
 import se.magnus.api.event.Event;
 import se.magnus.util.exceptions.EventProcessingException;
 
-@EnableBinding(Sink.class)
+//@EnableBinding(Sink.class)
 public class MessageProcessor {
 
     private static final Logger LOG = LoggerFactory.getLogger(MessageProcessor.class);
-
-    private final ReviewService reviewService;
-
     @Autowired
-    public MessageProcessor(ReviewService reviewService) {
-        this.reviewService = reviewService;
-    }
+    private ReviewService reviewService;
+
 
     @StreamListener(target = Sink.INPUT)
     public void process(Event<Integer, Review> event) {
