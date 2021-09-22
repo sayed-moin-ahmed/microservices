@@ -85,3 +85,6 @@ http://localhost:7000/openapi/swagger-ui.html  --local
 
 exec mongodb mongo product-db --quiet --eval "db.products.find()"
 docker-compose exec mongodb mongo product-db --quiet --eval "db.products.find()"
+
+======Eureka Server=====
+http://localhost:8761/

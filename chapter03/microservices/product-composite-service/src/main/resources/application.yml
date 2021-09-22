@@ -74,6 +74,7 @@ app:
     host: localhost
     port: 7003
 
+spring.application.name: product-composite
 eureka:
   client:
     serviceUrl:
