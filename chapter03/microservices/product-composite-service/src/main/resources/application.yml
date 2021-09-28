@@ -63,18 +63,8 @@ api:
 server.port: 7000
 server.error.include-message: always
 
-app:
-  product-service:
-    host: localhost
-    port: 7001
-  recommendation-service:
-    host: localhost
-    port: 7002
-  review-service:
-    host: localhost
-    port: 7003
-
 spring.application.name: product-composite
+app.eureka-server: localhost
 eureka:
   client:
     serviceUrl:
@@ -141,6 +131,7 @@ app:
 
 spring.rabbitmq.host: rabbitmq
 spring.cloud.stream.kafka.binder.brokers: kafka
+app.eureka-server: eureka
 
 springdoc:
   swagger-ui.path: /openapi/swagger-ui.html
