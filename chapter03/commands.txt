@@ -1,6 +1,17 @@
+===The twelve-factor app is a methodology for building software-as-a-service apps that:===
+https://12factor.net/
+
+===Spring Docs===
+https://spring.io/projects/spring-boot
+https://spring.io/projects/spring-cloud
+https://docs.spring.io/spring-cloud-commons/docs/current/reference/html/#webclinet-loadbalancer-client
+
+===Packt Publishing===
 https://github.com/orgs/PacktPublishing/repositories
+
 ===============Gradle Scan Info===============
 https://scans.gradle.com/s/owmwo7dhyxwow
+
 ==================Notes===============
 ---central gradle---
 cp -r microservices/product-service/gradle .
@@ -27,11 +38,11 @@ java -jar microservices/review-service/build/libs/*.jar &
 http://localhost:7002/recommendation/1
 
 
----kill port---
+===kill port===
 sudo lsof -t -i:7001
 sudo kill -9 $(sudo lsof -t -i:7001)
 
----install docker on Ubuntu---
+===install docker on Ubuntu===
 https://docs.docker.com/engine/install/ubuntu/
 https://docs.docker.com/engine/install/linux-postinstall/
 https://docs.docker.com/compose/install/
@@ -51,7 +62,7 @@ sudo chmod 777 /var/run/docker.sock
 
 
 
----docker commands---
+===docker commands===
 docker run -it --rm ubuntu
 cat /etc/os-release | grep 'VERSION='
 docker rm -f $(docker ps -aq)
