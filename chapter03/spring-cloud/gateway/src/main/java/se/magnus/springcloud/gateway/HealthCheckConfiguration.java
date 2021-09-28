@@ -9,14 +9,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Configuration
 public class HealthCheckConfiguration {
 
     private static final Logger LOG = LoggerFactory.getLogger(HealthCheckConfiguration.class);
 
-    private HealthAggregator healthAggregator;
+
 
     private final WebClient.Builder webClientBuilder;
 
@@ -24,24 +26,21 @@ public class HealthCheckConfiguration {
 
     @Autowired
     public HealthCheckConfiguration(
-            WebClient.Builder webClientBuilder,
-            HealthAggregator healthAggregator
+            WebClient.Builder webClientBuilder
     ) {
         this.webClientBuilder = webClientBuilder;
-        this.healthAggregator = healthAggregator;
-    }
+            }
 
     @Bean
     ReactiveHealthIndicator healthcheckMicroservices() {
+         Map<String, ReactiveHealthIndicator> indicators = new HashMap<>();
+        indicators.put("product",           () -> getHealth("http://product"));
+        indicators.put("recommendation",    () -> getHealth("http://recommendation"));
+        indicators.put("review",            () -> getHealth("http://review"));
+        indicators.put("product-composite", () -> getHealth("http://product-composite"));
 
-        ReactiveHealthIndicatorRegistry registry = new DefaultReactiveHealthIndicatorRegistry(new LinkedHashMap<>());
-
-        registry.register("product",           () -> getHealth("http://product"));
-        registry.register("recommendation",    () -> getHealth("http://recommendation"));
-        registry.register("review",            () -> getHealth("http://review"));
-        registry.register("product-composite", () -> getHealth("http://product-composite"));
-
-        return new CompositeReactiveHealthIndicator(healthAggregator, registry);
+        ReactiveHealthIndicator registry1 = (ReactiveHealthIndicator) CompositeReactiveHealthContributor.fromMap(indicators);
+        return registry1;
     }
 
     private Mono<Health> getHealth(String url) {
