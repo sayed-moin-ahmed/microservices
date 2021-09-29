@@ -100,6 +100,11 @@ http://localhost:7000/openapi/swagger-ui.html  --local
 
 exec mongodb mongo product-db --quiet --eval "db.products.find()"
 docker-compose exec mongodb mongo product-db --quiet --eval "db.products.find()"
+docker-compose ps gateway eureka product-composite product recommendation review
+curl localhost:8080/actuator/gateway/routes -s | jq '.[] | {"\(.route_id)": "\(.uri)"}' | grep -v '{\|}'
+docker-compose exec gateway curl localhost:8080/actuator/gateway/routes
+curl -H "accept:application/json"\ localhost:8080/eureka/api/apps -s
+curl localhost:8080/eureka/api/apps -s
 
 ======Eureka Server=====
 http://localhost:8761/
@@ -107,3 +112,6 @@ http://localhost:8761/
 ======Circuit Breaker====
 curl $HOST:$PORT/actuator/health -s | jq .components.circuitBreakers
 curl http://c31ae91a47b9:8080/actuator/info | jq .components.circuitBreakers
+
+
+keytool -genkeypair -alias localhost -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore edge.p12 -validity 3650
