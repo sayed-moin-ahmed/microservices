@@ -115,7 +115,9 @@ services:
     mem_limit: 350m
     ports:
       - "8080:8080"
-
+    depends_on:
+      product-composite:
+        condition: service_healthy
   mongodb:
     image: mongo:4.0
     mem_limit: 512m
