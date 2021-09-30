@@ -119,3 +119,6 @@ keytool -genkeypair -alias localhost -keyalg RSA -keysize 2048 -storetype PKCS12
 ===Lightweight Container Runtime for Kubernetes===
 https://cri-o.io/
 https://containerd.io/
+
+===k8s Install Tools===
+https://kind.sigs.k8s.io/docs/user/quick-start/#installation
