@@ -115,3 +115,7 @@ curl http://c31ae91a47b9:8080/actuator/info | jq .components.circuitBreakers
 
 
 keytool -genkeypair -alias localhost -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore edge.p12 -validity 3650
+
+===Lightweight Container Runtime for Kubernetes===
+https://cri-o.io/
+https://containerd.io/
