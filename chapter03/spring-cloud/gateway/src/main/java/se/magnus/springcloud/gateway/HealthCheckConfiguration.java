@@ -3,14 +3,15 @@ package se.magnus.springcloud.gateway;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.health.*;
+import org.springframework.boot.actuate.health.CompositeReactiveHealthContributor;
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.ReactiveHealthIndicator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Configuration
@@ -34,6 +35,7 @@ public class HealthCheckConfiguration {
     @Bean
     ReactiveHealthIndicator healthcheckMicroservices() {
          Map<String, ReactiveHealthIndicator> indicators = new HashMap<>();
+        indicators.put("auth-server",           () -> getHealth("http://auth-server"));
         indicators.put("product",           () -> getHealth("http://product"));
         indicators.put("recommendation",    () -> getHealth("http://recommendation"));
         indicators.put("review",            () -> getHealth("http://review"));

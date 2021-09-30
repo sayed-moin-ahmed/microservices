@@ -12,29 +12,7 @@ services:
       rabbitmq:
         condition: service_healthy
 
-  product-p1:
-    build: microservices/product-service
-    mem_limit: 350m
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    depends_on:
-      mongodb:
-        condition: service_healthy
-      rabbitmq:
-        condition: service_healthy
-
   recommendation:
-    build: microservices/recommendation-service
-    mem_limit: 350m
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    depends_on:
-      mongodb:
-        condition: service_healthy
-      rabbitmq:
-        condition: service_healthy
-
-  recommendation-p1:
     build: microservices/recommendation-service
     mem_limit: 350m
     environment:
@@ -50,23 +28,6 @@ services:
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_CLOUD_STREAM_BINDINGS_INPUT_CONSUMER_PARTITIONED=true
-      - SPRING_CLOUD_STREAM_BINDINGS_INPUT_CONSUMER_INSTANCECOUNT=2
-      - SPRING_CLOUD_STREAM_BINDINGS_INPUT_CONSUMER_INSTANCEINDEX=0
-    depends_on:
-      mysql:
-        condition: service_healthy
-      rabbitmq:
-        condition: service_healthy
-
-  review-p1:
-    build: microservices/review-service
-    mem_limit: 350m
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-      - SPRING_CLOUD_STREAM_BINDINGS_INPUT_CONSUMER_PARTITIONED=true
-      - SPRING_CLOUD_STREAM_BINDINGS_INPUT_CONSUMER_INSTANCECOUNT=2
-      - SPRING_CLOUD_STREAM_BINDINGS_INPUT_CONSUMER_INSTANCEINDEX=1
     depends_on:
       mysql:
         condition: service_healthy
@@ -92,7 +53,13 @@ services:
     build: spring-cloud/gateway
     mem_limit: 350m
     ports:
-      - "8080:8080"
+      - "8443:8443"
+
+  auth-server:
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    build: spring-cloud/authorization-server
+    mem_limit: 350m
 
   mongodb:
     image: mongo:4.0

@@ -1,29 +1,27 @@
 plugins {
 	id 'org.springframework.boot' version '2.5.3'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
 
-group = 'se.magnus.microservices.composite.product'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'se.magnus.springcloud'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '1.8'
-
-ext {
-	springCloudVersion = "2020.0.3"
-}
 
 repositories {
 	mavenCentral()
 }
 
-dependencies {
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-	implementation 'org.glassfish.jaxb:jaxb-runtime'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+ext {
+	springCloudVersion = "2020.0.3"
 }
 
-test {
-	useJUnitPlatform()
+dependencies {
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.glassfish.jaxb:jaxb-runtime'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 dependencyManagement {

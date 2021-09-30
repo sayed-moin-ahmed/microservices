@@ -5,8 +5,8 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-group = 'se.magnus.microservices.composite.product'
-version = '1.0.0-SNAPSHOT'
+group = 'se.magnus.springcloud'
+version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
